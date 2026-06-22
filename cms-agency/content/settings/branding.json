@@ -1,0 +1,9 @@
+{
+  "logo": "logo.png",
+  "primaryColor": "#3a5fd9",
+  "secondaryColor": "#2c49ad",
+  "accentColor": "#6f8ce8",
+  "darkColor": "#14141c",
+  "fontHeading": "DM Serif Display",
+  "fontBody": "Inter"
+}

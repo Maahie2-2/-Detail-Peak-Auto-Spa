@@ -1,0 +1,42 @@
+{
+  "name": "vehicles",
+  "items": [
+    {
+      "id": "veh-1",
+      "createdAt": "2024-01-05T08:00:00Z",
+      "updatedAt": "2024-01-05T08:00:00Z",
+      "fields": {
+        "name": "Cars",
+        "image": "cars.png"
+      }
+    },
+    {
+      "id": "veh-2",
+      "createdAt": "2024-01-06T08:00:00Z",
+      "updatedAt": "2024-01-06T08:00:00Z",
+      "fields": {
+        "name": "SUVs",
+        "image": "suvs.png"
+      }
+    },
+    {
+      "id": "veh-3",
+      "createdAt": "2024-01-07T08:00:00Z",
+      "updatedAt": "2024-01-07T08:00:00Z",
+      "fields": {
+        "name": "Trucks",
+        "image": "trucks.png"
+      }
+    },
+    {
+      "id": "veh-4",
+      "createdAt": "2024-01-08T08:00:00Z",
+      "updatedAt": "2024-01-08T08:00:00Z",
+      "fields": {
+        "name": "Vans",
+        "image": "vans.png"
+      }
+    }
+  ],
+  "updatedAt": "2026-06-21T19:55:34.292Z"
+}

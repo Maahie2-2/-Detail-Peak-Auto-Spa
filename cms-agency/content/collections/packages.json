@@ -1,0 +1,96 @@
+{
+  "name": "packages",
+  "items": [
+    {
+      "id": "pkg-1",
+      "createdAt": "2024-01-05T08:00:00Z",
+      "updatedAt": "2024-01-05T08:00:00Z",
+      "fields": {
+        "title": "Exterior Detail",
+        "description": "Restore your vehicle's shine & protect its finish with a thorough hand-clean process.",
+        "category": "Detailing",
+        "price": "$75",
+        "priceLabel": "Starting at",
+        "features": "Premium Foam Hand Wash\nBug Removal\nWheel & Tire Deep Cleaning\nTire Dressing\nStreak Free Glass Cleaning\nScratch Free Premium Towel Dry\nHigh Gloss Ceramic Sealant",
+        "isFeatured": false,
+        "image": ""
+      }
+    },
+    {
+      "id": "pkg-2",
+      "createdAt": "2024-01-06T08:00:00Z",
+      "updatedAt": "2024-01-06T08:00:00Z",
+      "fields": {
+        "title": "Interior Detail Only",
+        "description": "Our signature way to get that refreshed feel inside your vehicle.",
+        "category": "Detailing",
+        "price": "",
+        "priceLabel": "",
+        "features": "Deep Vacuuming Of Seats, Carpets, Floor Mats, & Trunk\nLeather Conditioning & Protection\nCleaning Of Dashboard, Console, Doors & Cup Holders\nAir Vent & Crevice Detailing\nInterior Glass & Mirror Streak-Free Cleaning",
+        "isFeatured": false,
+        "image": ""
+      }
+    },
+    {
+      "id": "pkg-3",
+      "createdAt": "2024-01-07T08:00:00Z",
+      "updatedAt": "2026-06-22T18:11:04.845Z",
+      "fields": {
+        "title": "Signature Full Detail",
+        "description": "Complete signature refresh inside & out — our most popular package.",
+        "category": "Detailing",
+        "price": "",
+        "priceLabel": "",
+        "features": "Premium Foam Hand Wash\nBug Removal\nWheel & Tire Deep Cleaning\nTire Dressing\nStreak Free Glass Cleaning\nScratch Free Premium Towel Dry\nHigh Gloss Ceramic Sealant\nDeep Vacuuming Of Seats, Carpets, Floor Mats, & Trunk\nLeather Conditioning & Protection",
+        "isFeatured": true,
+        "image": ""
+      }
+    },
+    {
+      "id": "pkg-4",
+      "createdAt": "2024-01-08T08:00:00Z",
+      "updatedAt": "2024-01-08T08:00:00Z",
+      "fields": {
+        "title": "Signature Plus Full Detail",
+        "description": "Full interior & exterior with shampoo and steam cleaning upgrade.",
+        "category": "Detailing",
+        "price": "",
+        "priceLabel": "",
+        "features": "Premium Foam Hand Wash\nBug Removal\nClay bar treatment\nWheel & Tire Deep Cleaning\nTire Dressing\nStreak Free Glass Cleaning\nUpgraded 6 month Ceramic Sealant\nDeep Vacuuming, Steam Cleaning, Shampoo service",
+        "isFeatured": false,
+        "image": ""
+      }
+    },
+    {
+      "id": "pkg-5",
+      "createdAt": "2024-01-09T08:00:00Z",
+      "updatedAt": "2024-01-09T08:00:00Z",
+      "fields": {
+        "title": "1 Year Ceramic Coating",
+        "description": "One step polish to enhance your paint, bring back gloss with 1 year ceramic protection.",
+        "category": "Ceramic Coating",
+        "price": "$500",
+        "priceLabel": "Starting at",
+        "features": "Premium Exterior service\n1 step machine polish (removes 30-40% swirls)\n1 year ceramic coating to all paint and glass\nTrim restored",
+        "isFeatured": false,
+        "image": ""
+      }
+    },
+    {
+      "id": "pkg-6",
+      "createdAt": "2024-01-10T08:00:00Z",
+      "updatedAt": "2024-01-10T08:00:00Z",
+      "fields": {
+        "title": "3 Year Ceramic Coating",
+        "description": "2 step correction for a better-than-factory finish sealed with 3 years of premium graphene ceramic.",
+        "category": "Ceramic Coating",
+        "price": "",
+        "priceLabel": "",
+        "features": "Premium exterior service\n2 step machine polish (removes 90-99% swirls)\n3 year ceramic coating to all paint and glass\nTrim restored",
+        "isFeatured": false,
+        "image": ""
+      }
+    }
+  ],
+  "updatedAt": "2026-06-22T18:11:04.855Z"
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "about",
+  "title": "About Us",
+  "meta": {
+    "title": "About Us | Detail Peak Auto Spa",
+    "description": "Learn about Detail Peak Auto Spa — Denver's premium mobile auto detailing service. Professional, reliable, and fully mobile.",
+    "canonical": "/about",
+    "og": {
+      "title": "About Detail Peak Auto Spa",
+      "description": "Meet the team behind Denver's best mobile auto detailing.",
+      "image": ""
+    },
+    "schema": ""
+  },
+  "sections": [
+    {
+      "id": "sec-about-001",
+      "type": "about",
+      "fields": {
+        "heading": "About Detail Peak Auto Spa",
+        "content": "Detail Peak Auto Spa was founded with a passion for bringing showroom-quality car care directly to your doorstep. Based in Denver, we serve the entire metro area with premium mobile auto detailing, ceramic coating, and paint protection services. Our team of certified professionals uses only the highest-quality products and techniques to ensure your vehicle looks its absolute best. We bring our own water, power, and equipment — so you don't have to lift a finger.",
+        "image": "",
+        "buttonText": "Meet Our Team",
+        "buttonLink": "/team"
+      }
+    },
+    {
+      "id": "sec-team-001",
+      "type": "team",
+      "fields": {
+        "heading": "Meet Our Team",
+        "teamMemberIds": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "services",
+  "items": [
+    {
+      "id": "svc-1",
+      "createdAt": "2024-01-05T08:00:00Z",
+      "updatedAt": "2024-01-05T08:00:00Z",
+      "fields": {
+        "title": "Ceramic Coating",
+        "description": "Long-lasting paint protection that keeps your vehicle looking glossy and protected from the elements for years.",
+        "icon": "shield",
+        "image": "cermamic-coating.jpg",
+        "price": "From $500",
+        "category": "Protection",
+        "features": "Long-lasting paint protection\nGlossy finish\nProtection from the elements\nYears of durability"
+      }
+    },
+    {
+      "id": "svc-2",
+      "createdAt": "2024-01-06T08:00:00Z",
+      "updatedAt": "2024-01-06T08:00:00Z",
+      "fields": {
+        "title": "Mobile Detailing",
+        "description": "Full interior and exterior detailing at your location. We bring everything needed to make your car look brand new.",
+        "icon": "truck",
+        "image": "car-detaling.jpg",
+        "price": "From $75",
+        "category": "Detailing",
+        "features": "Interior & exterior cleaning\nAt your location\nAll equipment provided\nMake your car look brand new"
+      }
+    }
+  ],
+  "updatedAt": "2026-06-22T18:09:43.895Z"
+}

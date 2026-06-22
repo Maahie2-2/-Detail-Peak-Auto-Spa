@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Website</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #111; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg, #2563eb, #1e40af); color: white; padding: 6rem 0; text-align: center; }
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.25rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2rem; }
+    .btn { display: inline-block; padding: 0.75rem 2rem; background: white; color: #2563eb; border-radius: 8px; text-decoration: none; font-weight: 600; }
+
+    /* Services */
+    .services { padding: 4rem 0; background: #f9fafb; }
+    .services h2 { text-align: center; font-size: 2rem; margin-bottom: 3rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .service-card { background: white; padding: 2rem; border-radius: 12px; border: 1px solid #e5e7eb; }
+    .service-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+
+    /* Testimonials */
+    .testimonials { padding: 4rem 0; }
+    .testimonials h2 { text-align: center; font-size: 2rem; margin-bottom: 3rem; }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .testimonial-card { background: #f9fafb; padding: 2rem; border-radius: 12px; }
+    .testimonial-card .quote { font-style: italic; margin-bottom: 1rem; }
+    .testimonial-card .author { font-weight: 600; }
+
+    /* CTA */
+    .cta { background: #111; color: white; padding: 4rem 0; text-align: center; }
+    .cta h2 { font-size: 2rem; margin-bottom: 1rem; }
+    .cta .btn { background: #2563eb; color: white; margin-top: 1.5rem; }
+
+    /* Contact */
+    .contact { padding: 4rem 0; background: #f9fafb; }
+    .contact h2 { text-align: center; font-size: 2rem; margin-bottom: 3rem; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .contact-info p { margin-bottom: 0.75rem; }
+    .contact-form { background: white; padding: 2rem; border-radius: 12px; border: 1px solid #e5e7eb; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; margin-bottom: 0.25rem; font-weight: 500; }
+    .form-group input, .form-group textarea { width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 6px; }
+    .form-group button { background: #2563eb; color: white; padding: 0.75rem 2rem; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+
+    /* About */
+    .about { padding: 4rem 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .about h2 { font-size: 2rem; margin-bottom: 1rem; }
+    .about p { margin-bottom: 1rem; color: #4b5563; }
+
+    /* Team */
+    .team { padding: 4rem 0; background: #f9fafb; }
+    .team h2 { text-align: center; font-size: 2rem; margin-bottom: 3rem; }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    .team-card { text-align: center; }
+    .team-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; background: #e5e7eb; }
+    .team-card h3 { font-size: 1.125rem; }
+    .team-card p { color: #6b7280; font-size: 0.875rem; }
+
+    /* FAQ */
+    .faq { padding: 4rem 0; }
+    .faq h2 { text-align: center; font-size: 2rem; margin-bottom: 3rem; }
+    .faq-item { border-bottom: 1px solid #e5e7eb; padding: 1.5rem 0; }
+    .faq-item h3 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+    .faq-item p { color: #4b5563; }
+
+    /* Gallery */
+    .gallery { padding: 4rem 0; background: #f9fafb; }
+    .gallery h2 { text-align: center; font-size: 2rem; margin-bottom: 3rem; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+    .gallery-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    // CMS Preview Integration
+    // Check if we're in preview mode from the CMS
+    const urlParams = new URLSearchParams(window.location.search);
+    const isPreview = urlParams.get('cms_preview') === '1';
+    const previewData = urlParams.get('data');
+
+    let pageData = null;
+
+    if (isPreview && previewData) {
+      try {
+        pageData = JSON.parse(atob(previewData));
+        console.log('CMS Preview Mode Active');
+      } catch (e) {
+        console.error('Failed to parse preview data:', e);
+      }
+    }
+
+    async function loadPage() {
+      if (!pageData) {
+        try {
+          const res = await fetch('/content/pages/home.json');
+          pageData = await res.json();
+        } catch (e) {
+          document.getElementById('app').innerHTML = '<p style="text-align:center;padding:4rem">Failed to load page content.</p>';
+          return;
+        }
+      }
+      renderPage(pageData);
+    }
+
+    async function loadCollection(name) {
+      try {
+        const res = await fetch(`/content/collections/${name}.json`);
+        const data = await res.json();
+        return data.items || [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    async function renderPage(page) {
+      const app = document.getElementById('app');
+      let html = '';
+
+      for (const section of page.sections) {
+        const fields = section.fields || {};
+
+        switch (section.type) {
+          case 'hero':
+            html += `
+              <section class="hero" style="${fields.image ? `background-image: url(${fields.image}); background-size: cover; background-position: center;` : ''}">
+                <div class="container">
+                  <h1>${escapeHtml(fields.heading || '')}</h1>
+                  <p>${escapeHtml(fields.subheading || '')}</p>
+                  ${fields.buttonText && fields.buttonLink ? `<a href="${escapeHtml(fields.buttonLink)}" class="btn">${escapeHtml(fields.buttonText)}</a>` : ''}
+                </div>
+              </section>
+            `;
+            break;
+
+          case 'about':
+            html += `
+              <section class="about">
+                <div class="container">
+                  <div class="about-grid">
+                    <div>
+                      <h2>${escapeHtml(fields.heading || '')}</h2>
+                      <p>${escapeHtml(fields.content || '').replace(/\n/g, '</p><p>')}</p>
+                      ${fields.buttonText && fields.buttonLink ? `<a href="${escapeHtml(fields.buttonLink)}" class="btn">${escapeHtml(fields.buttonText)}</a>` : ''}
+                    </div>
+                    ${fields.image ? `<div><img src="${fields.image}" alt="" style="width:100%;border-radius:12px"></div>` : ''}
+                  </div>
+                </div>
+              </section>
+            `;
+            break;
+
+          case 'services':
+            const allServices = await loadCollection('services');
+            const selectedServices = fields.selectedServices || [];
+            const services = selectedServices.length
+              ? allServices.filter((s) => selectedServices.includes(s.id))
+              : allServices.slice(0, 3);
+            html += `
+              <section class="services">
+                <div class="container">
+                  <h2>${escapeHtml(fields.heading || 'Our Services')}</h2>
+                  <div class="services-grid">
+                    ${services.map((s) => `
+                      <div class="service-card">
+                        <h3>${escapeHtml(s.fields.title || '')}</h3>
+                        <p>${escapeHtml(s.fields.description || '')}</p>
+                        ${s.fields.price ? `<p style="margin-top:0.5rem;font-weight:600;color:#2563eb">${escapeHtml(s.fields.price)}</p>` : ''}
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              </section>
+            `;
+            break;
+
+          case 'testimonials':
+            const allTestimonials = await loadCollection('testimonials');
+            const selectedIds = fields.testimonialIds || [];
+            const testimonials = selectedIds.length
+              ? allTestimonials.filter((t) => selectedIds.includes(t.id))
+              : allTestimonials.slice(0, 2);
+            html += `
+              <section class="testimonials">
+                <div class="container">
+                  <h2>${escapeHtml(fields.heading || 'What Our Clients Say')}</h2>
+                  <div class="testimonial-grid">
+                    ${testimonials.map((t) => `
+                      <div class="testimonial-card">
+                        <p class="quote">"${escapeHtml(t.fields.quote || '')}"</p>
+                        <p class="author">${escapeHtml(t.fields.name || '')}</p>
+                        ${t.fields.role ? `<p style="font-size:0.875rem;color:#6b7280">${escapeHtml(t.fields.role)}</p>` : ''}
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              </section>
+            `;
+            break;
+
+          case 'faq':
+            const allFaqs = await loadCollection('faqs');
+            const selectedFaqIds = fields.faqIds || [];
+            const faqs = selectedFaqIds.length
+              ? allFaqs.filter((f) => selectedFaqIds.includes(f.id))
+              : allFaqs.slice(0, 4);
+            html += `
+              <section class="faq">
+                <div class="container">
+                  <h2>${escapeHtml(fields.heading || 'Frequently Asked Questions')}</h2>
+                  ${faqs.map((f) => `
+                    <div class="faq-item">
+                      <h3>${escapeHtml(f.fields.question || '')}</h3>
+                      <p>${escapeHtml(f.fields.answer || '')}</p>
+                    </div>
+                  `).join('')}
+                </div>
+              </section>
+            `;
+            break;
+
+          case 'gallery':
+            const images = fields.images || [];
+            html += `
+              <section class="gallery">
+                <div class="container">
+                  <h2>${escapeHtml(fields.heading || 'Gallery')}</h2>
+                  <div class="gallery-grid">
+                    ${images.map((img) => `<img src="${img}" alt="">`).join('')}
+                  </div>
+                </div>
+              </section>
+            `;
+            break;
+
+          case 'team':
+            const allTeam = await loadCollection('team');
+            const selectedTeamIds = fields.teamMemberIds || [];
+            const team = selectedTeamIds.length
+              ? allTeam.filter((m) => selectedTeamIds.includes(m.id))
+              : allTeam.slice(0, 3);
+            html += `
+              <section class="team">
+                <div class="container">
+                  <h2>${escapeHtml(fields.heading || 'Our Team')}</h2>
+                  <div class="team-grid">
+                    ${team.map((m) => `
+                      <div class="team-card">
+                        <img src="${m.fields.image || ''}" alt="${escapeHtml(m.fields.name || '')}">
+                        <h3>${escapeHtml(m.fields.name || '')}</h3>
+                        <p>${escapeHtml(m.fields.role || '')}</p>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              </section>
+            `;
+            break;
+
+          case 'cta':
+            html += `
+              <section class="cta" style="${fields.backgroundImage ? `background-image: url(${fields.backgroundImage}); background-size: cover;` : ''}">
+                <div class="container">
+                  <h2>${escapeHtml(fields.heading || '')}</h2>
+                  <p>${escapeHtml(fields.subheading || '')}</p>
+                  ${fields.buttonText && fields.buttonLink ? `<a href="${escapeHtml(fields.buttonLink)}" class="btn">${escapeHtml(fields.buttonText)}</a>` : ''}
+                </div>
+              </section>
+            `;
+            break;
+
+          case 'contact':
+            html += `
+              <section class="contact">
+                <div class="container">
+                  <h2>${escapeHtml(fields.heading || 'Contact Us')}</h2>
+                  <div class="contact-grid">
+                    <div class="contact-info">
+                      <p><strong>Phone:</strong> (555) 123-4567</p>
+                      <p><strong>Email:</strong> hello@example.com</p>
+                      <p><strong>Address:</strong> 123 Main St, Springfield</p>
+                      <p><strong>Hours:</strong> Mon-Fri 9am-5pm</p>
+                    </div>
+                    <div class="contact-form">
+                      <h3>${escapeHtml(fields.formHeading || 'Send a Message')}</h3>
+                      <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" placeholder="Your name">
+                      </div>
+                      <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="your@email.com">
+                      </div>
+                      <div class="form-group">
+                        <label>Message</label>
+                        <textarea rows="4" placeholder="How can we help?"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <button>Send Message</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            `;
+            break;
+        }
+      }
+
+      app.innerHTML = html;
+
+      // Update document title from meta
+      if (page.meta?.title) {
+        document.title = page.meta.title;
+      }
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    loadPage();
+  </script>
+</body>
+</html>

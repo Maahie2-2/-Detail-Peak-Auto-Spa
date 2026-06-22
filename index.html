@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title id="page-title">Detail Peak Auto Spa | Premium Mobile Detailing Denver</title>
+<meta name="description" id="page-desc" content="Premium mobile auto detailing serving Denver and surrounding areas. Professional interior and exterior detailing, ceramic coating, and paint protection at your home or office." />
+
+<!-- FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ---------- THEME VARIABLES (edit colors/fonts here) ---------- */
+  :root{
+    --font-heading: "DM Serif Display", serif;
+    --font-body: "Inter", sans-serif;
+
+    --color-bg: #fcfcfd;
+    --color-bg-alt: #f3f4f8;
+    --color-dark: #14141c;
+    --color-text: #1c1c26;
+    --color-text-muted: #5b5b6b;
+    --color-text-soft: #8a8a98;
+
+    --color-primary: #3a5fd9;
+    --color-primary-dark: #2c49ad;
+    --color-primary-light: #6f8ce8;
+
+    --color-white: #ffffff;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html, body{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
+    position: relative;
+  }
+
+  body{
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  h1,h2,h3{
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    font-weight: 400;
+  }
+
+  a{ color: inherit; text-decoration: none; }
+  ul{ list-style:none; }
+  img{ max-width:100%; display:block; }
+
+  .container{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 28px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:15px;
+    white-space:nowrap;
+    border:none;
+    cursor:pointer;
+    transition: background-color .2s ease, transform .15s ease;
+  }
+  .btn:hover{ transform: translateY(-1px); }
+
+  .btn-primary{
+    background-color: var(--color-primary);
+    color:#fff;
+  }
+  .btn-primary:hover{ background-color: var(--color-primary-dark); }
+
+  .btn-ghost{
+    background-color: rgba(255,255,255,0.12);
+    color:#fff;
+    border:1px solid rgba(255,255,255,0.35);
+    backdrop-filter: blur(6px);
+  }
+  .btn-ghost:hover{ background-color: rgba(255,255,255,0.22); }
+
+  .btn-outline-dark{
+    background-color: transparent;
+    color: var(--color-text);
+    border:1px solid #cfd2da;
+  }
+
+  /* ---------- NAVBAR ---------- */
+  .navbar{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:50;
+    background:transparent;
+    transition: background-color .3s ease, box-shadow .3s ease;
+  }
+  .navbar.scrolled{
+    background-color: rgba(255,255,255,0.97);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    backdrop-filter: blur(12px);
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:76px;
+  }
+  .logo{
+    font-family: var(--font-heading);
+    font-size:22px;
+    color:#fff;
+    transition: color .3s ease;
+  }
+  .site-logo{
+    height:80px;
+    width:auto;
+    display:block;
+  }
+  .navbar.scrolled .logo{ color: var(--color-text); }
+
+  .nav-links{
+    display:flex;
+    gap:32px;
+  }
+  .nav-links a{
+    font-size:14px;
+    font-weight:500;
+    color:#fff;
+    transition: color .3s ease;
+  }
+  .navbar.scrolled .nav-links a{ color: var(--color-text-muted); }
+  .nav-links a:hover{ color: var(--color-primary-light); }
+
+  .nav-cta{ display:none; }
+  .nav-toggle{
+    display:none;
+    background:none;
+    border:none;
+    font-size:26px;
+    color:#fff;
+    cursor:pointer;
+  }
+  .navbar.scrolled .nav-toggle{ color: var(--color-text); }
+
+  .mobile-menu{
+    display:none;
+    flex-direction:column;
+    gap:16px;
+    padding:20px 24px 28px;
+    background: rgba(255,255,255,0.98);
+    border-top:1px solid #eee;
+  }
+  .mobile-menu a{
+    color: var(--color-text);
+    font-weight:500;
+    font-size:15px;
+  }
+
+  @media (min-width: 860px){
+    .nav-cta{ display:inline-flex; }
+    .nav-toggle{ display:none !important; }
+  }
+  @media (max-width: 859px){
+    .nav-links{ display:none; }
+    .nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute; inset:0;
+  }
+  .hero-video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .hero-overlay{
+    position:absolute; inset:0;
+    background: linear-gradient(to bottom, rgba(20,20,28,0.55), rgba(20,20,28,0.4) 40%, rgba(20,20,28,0.7));
+  }
+  .hero-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    max-width:760px;
+    padding: 110px 24px 60px;
+  }
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 16px;
+    border-radius:999px;
+    background: rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.25);
+    color:#fff;
+    font-size:13px;
+    font-weight:500;
+    margin-bottom:32px;
+  }
+  .stars{ color:#facc15; font-size:12px; letter-spacing:1px; }
+
+  .hero h1{
+    font-size:42px;
+    color:#fff;
+    margin-bottom:24px;
+  }
+  .hero p{
+    color: rgba(255,255,255,0.85);
+    font-size:17px;
+    max-width:560px;
+    margin:0 auto 40px;
+  }
+  .hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    justify-content:center;
+  }
+
+  @media (min-width: 768px){
+    .hero h1{ font-size:60px; }
+    .hero p{ font-size:19px; }
+  }
+  @media (min-width: 1024px){
+    .hero h1{ font-size:72px; }
+  }
+
+  /* ---------- SECTION SPACING ---------- */
+  section{ padding:80px 0; }
+  .section-head{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 56px;
+  }
+  .section-head h2{
+    font-size:32px;
+    margin-bottom:16px;
+  }
+  .section-head p{
+    color: var(--color-text-muted);
+    font-size:16px;
+  }
+  @media (min-width: 768px){
+    .section-head h2{ font-size:46px; }
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{
+    display:flex;
+    flex-direction:column;
+    gap:32px;
+    max-width:1100px;
+    margin:0 auto;
+  }
+  .service-row{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    border-radius:18px;
+    overflow:hidden;
+    background: #fff;
+    align-items:stretch;
+  }
+  .service-row .service-media img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .service-row .service-media{ flex:1 1 50%; min-height:260px; }
+  .service-row .service-copy{ flex:1 1 50%; padding:28px; display:flex; flex-direction:column; justify-content:center; }
+  .service-row .service-copy h3{ font-size:28px; margin-bottom:12px; color:var(--color-text); }
+  .service-row .service-copy p{ color:var(--color-text-muted); margin-bottom:18px; }
+  .service-row .service-copy .btn{ width:fit-content; }
+  @media (min-width: 768px){
+    .service-row{ flex-direction:row; }
+    .service-row.reverse{ flex-direction:row-reverse; }
+  }
+
+  /* ---------- REVIEWS ---------- */
+  .reviews-section{ background: var(--color-bg); padding: 100px 0; }
+  .reviews-section .section-head{ margin-bottom: 64px; }
+  .reviews-section .section-head h2{ font-size: 38px; letter-spacing: -0.02em; }
+  .reviews-section .section-head .subtle{ color: var(--color-text-soft); font-size: 15px; letter-spacing: 0.01em; }
+
+  .reviews-row{ display:flex; flex-direction:column; gap:36px; align-items:stretch; max-width:1100px; margin:0 auto; }
+  .review-video{ flex:1 1 45%; }
+  .review-video video{
+    width:100%; height:100%; min-height:400px; max-height:520px;
+    object-fit:cover; display:block; border-radius:20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  }
+
+  .reviews-list{ flex:1 1 55%; padding:0; overflow:hidden; position:relative; }
+  .reviews-list > h2{ display:none; }
+
+  .review-viewport{ overflow:hidden; position:relative; min-height: 320px; }
+  .review-track{
+    display:flex;
+    transition: transform 0.8s cubic-bezier(.4,0,.2,1);
+    will-change: transform;
+  }
+  .review-slide{ min-width:100%; box-sizing:border-box; padding:0 4px; }
+
+  .review-item{
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 20px;
+    padding: 36px 32px 32px;
+    position: relative;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.03);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .review-item:hover{
+    box-shadow: 0 8px 40px rgba(58,95,217,0.08);
+    transform: translateY(-2px);
+  }
+
+  .review-item::before{
+    content: '\201C';
+    position: absolute;
+    top: 20px; left: 28px;
+    font-size: 64px;
+    line-height: 1;
+    font-family: Georgia, serif;
+    color: var(--color-primary);
+    opacity: 0.12;
+    pointer-events: none;
+  }
+
+  .review-item a{
+    display: inline-block;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--color-text);
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+    transition: color 0.2s ease;
+  }
+  .review-item a:hover{ color: var(--color-primary); }
+
+  .review-stars{
+    color: #f5a623;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .review-meta{
+    font-size: 12px;
+    color: var(--color-text-soft);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+  }
+  .review-item p{
+    margin:0;
+    color: var(--color-text-muted);
+    font-size: 15px;
+    line-height: 1.7;
+    letter-spacing: 0.005em;
+  }
+
+  .review-dots{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 28px;
+  }
+  .review-dot{
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #d1d5db;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+  .review-dot.active{
+    background: var(--color-primary);
+    width: 28px;
+    border-radius: 999px;
+  }
+
+  @media (min-width:768px){
+    .reviews-row{ flex-direction:row; gap:48px; align-items: center; }
+    .reviews-section .section-head h2{ font-size: 46px; }
+  }
+
+  /* ---------- LOVE SECTION ---------- */
+  .love-section{ padding:80px 0; background: linear-gradient(180deg,#ffffff,#f7f9fc); }
+  .love-inner{ max-width:1100px; margin:0 auto; display:flex; gap:40px; flex-direction:column; align-items:center; text-align:center; }
+  .love-content{ max-width:720px; }
+  .love-content h2{ font-size:36px; margin-bottom:14px; letter-spacing:-0.02em; }
+  .love-content p{ color:var(--color-text-muted); margin-bottom:24px; font-size:16px; line-height:1.7; }
+
+  .marquees{ display:flex; flex-direction:column; gap:20px; width:100vw; margin-left:calc(-50vw + 50%); overflow:hidden; }
+  .marquee{ width:100%; overflow:hidden; padding:4px 0; }
+  .marquee-track{ display:flex; gap:16px; align-items:center; width:max-content; }
+  .marquee-item img{
+    height:280px; width:auto; display:block; border-radius:16px;
+    object-fit:cover;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    transition: transform 0.4s ease;
+  }
+  .marquee-item img:hover{ transform: scale(1.03); }
+
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee .marquee-track{ animation: marquee 25s linear infinite; }
+  .marquee.marquee-right .marquee-track{ animation-direction: reverse; }
+  @media (max-width: 768px){
+    .marquee-item img{ height:180px; }
+    .love-content h2{ font-size:28px; }
+  }
+
+  /* ---------- VEHICLE TYPES ---------- */
+  .vehicles-section{
+    background: var(--color-dark);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .vehicles-section::before{
+    content:'';
+    position:absolute;
+    top:-120px; right:-120px;
+    width:400px; height:400px;
+    background: radial-gradient(circle, rgba(58,95,217,0.15) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .vehicles-section .section-head h2{ color:#fff; font-size:38px; letter-spacing:-0.02em; }
+  .vehicles-note{
+    text-align:center;
+    color: rgba(255,255,255,0.5);
+    font-size:15px;
+    font-weight:400;
+    margin-bottom:48px;
+    letter-spacing:0.01em;
+  }
+  .vehicles-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:24px;
+    max-width:960px;
+    margin:0 auto;
+  }
+  @media (min-width: 640px){
+    .vehicles-grid{ grid-template-columns: repeat(4, 1fr); }
+  }
+  .vehicle-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:16px;
+    padding:36px 20px 28px;
+    border-radius:20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+    cursor:default;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.3s ease;
+  }
+  .vehicle-item:hover{
+    transform: translateY(-6px) scale(1.02);
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 16px 48px rgba(58,95,217,0.15);
+    border-color: rgba(58,95,217,0.3);
+  }
+  .vehicle-icon{
+    width:auto; height:auto;
+    border-radius:0;
+    background: transparent;
+    display:flex; align-items:center; justify-content:center;
+    padding:0;
+    transition: transform 0.4s ease;
+  }
+  .vehicle-item:hover .vehicle-icon{ transform: scale(1.08); }
+  .vehicle-icon img{ width:180px; height:180px; display:block; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2)); }
+  .vehicle-item span{
+    font-size:15px;
+    font-weight:600;
+    text-align:center;
+    color:#fff;
+    letter-spacing:0.02em;
+  }
+
+  .vehicle-item{
+    opacity:0;
+    transform: translateY(30px);
+  }
+  .vehicle-item.revealed{
+    opacity:1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.4s ease, background 0.3s ease;
+  }
+  .vehicle-item:nth-child(2).revealed{ transition-delay: 0.1s; }
+  .vehicle-item:nth-child(3).revealed{ transition-delay: 0.2s; }
+  .vehicle-item:nth-child(4).revealed{ transition-delay: 0.3s; }
+
+  @media (min-width:768px){
+    .vehicles-section .section-head h2{ font-size:46px; }
+  }
+
+  /* ---------- PACKAGES ---------- */
+  .packages{ padding:100px 0; background: var(--color-bg); }
+  .packages .section-head{ text-align:center; max-width:700px; margin:0 auto 20px; }
+  .packages .section-head h2{ font-size:38px; letter-spacing:-0.02em; }
+  .packages .section-head p{ color:var(--color-text-soft); font-size:15px; margin-top:12px; }
+
+  .pkg-filters{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-bottom:48px;
+    flex-wrap:wrap;
+  }
+  .pkg-filter-btn{
+    padding:10px 24px;
+    border-radius:999px;
+    border:1px solid #dfe1e6;
+    background:#fff;
+    color:var(--color-text-muted);
+    font-size:14px;
+    font-weight:500;
+    cursor:pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+  }
+  .pkg-filter-btn:hover{
+    border-color:var(--color-primary-light);
+    color:var(--color-primary);
+  }
+  .pkg-filter-btn.active{
+    background:var(--color-primary);
+    color:#fff;
+    border-color:var(--color-primary);
+    box-shadow: 0 4px 14px rgba(58,95,217,0.25);
+  }
+
+  .packages .grid{ max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr; gap:24px; }
+  @media (min-width: 640px){ .packages .grid{ grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px){ .packages .grid{ grid-template-columns: repeat(3, 1fr); } }
+
+  .package-card{
+    background:#fff;
+    border-radius:20px;
+    padding:32px 28px 28px;
+    border:1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.4s ease;
+    overflow:hidden;
+  }
+  .package-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(58,95,217,0.10);
+  }
+  .package-card.hidden{
+    display:none;
+  }
+
+  .pkg-featured{
+    position:absolute;
+    top:20px; right:20px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    padding:5px 14px;
+    border-radius:999px;
+  }
+
+  .pkg-category{
+    display:inline-block;
+    font-size:11px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--color-primary);
+    background:rgba(58,95,217,0.07);
+    padding:4px 12px;
+    border-radius:999px;
+    margin-bottom:14px;
+    width:fit-content;
+  }
+
+  .package-card h4{
+    margin:0 0 10px;
+    font-size:20px;
+    font-family: var(--font-heading);
+    font-weight:400;
+    letter-spacing:-0.01em;
+    color:var(--color-text);
+  }
+  .package-card .muted{ color:var(--color-text-soft); margin-bottom:16px; font-size:14px; line-height:1.6; }
+
+  .package-list{
+    margin:0 0 auto;
+    padding:0;
+    list-style:none;
+  }
+  .package-list li{
+    position:relative;
+    padding-left:22px;
+    margin-bottom:10px;
+    font-size:14px;
+    color:var(--color-text-muted);
+    line-height:1.5;
+  }
+  .package-list li::before{
+    content:'\2713';
+    position:absolute;
+    left:0; top:1px;
+    color:var(--color-primary);
+    font-weight:700;
+    font-size:13px;
+  }
+
+  .package-cta{
+    margin-top:24px;
+    padding-top:20px;
+    border-top:1px solid rgba(0,0,0,0.06);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .package-cta .btn{
+    padding:12px 20px;
+    font-size:13px;
+  }
+  .package-cta .price{
+    font-size:14px;
+    font-weight:600;
+    color:var(--color-text);
+  }
+  .package-cta .price span{
+    font-size:12px;
+    font-weight:400;
+    color:var(--color-text-soft);
+  }
+
+  .package-card.featured{
+    border-color: var(--color-primary);
+    border-width:2px;
+    box-shadow: 0 8px 32px rgba(58,95,217,0.10);
+  }
+
+  .ceramic-card{ display:flex; flex-direction:column; gap:12px; }
+
+  @media (min-width:768px){
+    .packages .section-head h2{ font-size:46px; }
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-section{
+    background-color: var(--color-dark);
+  }
+  .faq-section .section-head h2{ color:#fff; }
+  .faq-list{
+    max-width:680px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .faq-item{
+    background: rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .faq-question{
+    width:100%;
+    background:none;
+    border:none;
+    color:#fff;
+    text-align:left;
+    padding:18px 20px;
+    font-size:15px;
+    font-weight:500;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+  }
+  .faq-icon{ font-size:18px; color:rgba(255,255,255,0.6); }
+  .faq-answer{
+    display:none;
+    padding:0 20px 18px;
+    color: rgba(255,255,255,0.7);
+    font-size:14px;
+  }
+  .faq-item.open .faq-answer{ display:block; }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background-color: var(--color-dark);
+    color: rgba(255,255,255,0.6);
+    padding:60px 0 30px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:36px;
+    margin-bottom:48px;
+  }
+  @media (min-width: 768px){
+    .footer-grid{ grid-template-columns: 1fr 1fr 1fr; }
+  }
+  .footer-grid h3{
+    color:#fff;
+    font-size:17px;
+    font-weight:600;
+    font-family: var(--font-body);
+    margin-bottom:16px;
+  }
+  .footer-grid a, .footer-grid p{
+    font-size:14px;
+    display:block;
+    margin-bottom:8px;
+  }
+  .footer-grid a:hover{ color: var(--color-primary-light); }
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding-top:24px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    align-items:center;
+    text-align:center;
+  }
+  @media (min-width: 640px){
+    .footer-bottom{ flex-direction:row; justify-content:space-between; text-align:left; }
+  }
+  .footer-brand{ display:flex; align-items:center; gap:10px; }
+
+  /* Admin link */
+  .admin-link{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--color-primary);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    z-index: 100;
+    box-shadow: 0 4px 14px rgba(58,95,217,0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .admin-link:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(58,95,217,0.4);
+  }
+
+  /* ---------- MOBILE & RESPONSIVE REFINEMENTS ---------- */
+  @media (max-width: 859px) {
+    section { padding: 60px 0; }
+    .section-head { margin-bottom: 36px; }
+    .section-head h2 { font-size: 28px !important; }
+
+    .mobile-menu {
+      position: absolute;
+      top: 76px;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 24px;
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 100;
+    }
+
+    .hero-content { padding-top: 120px; padding-bottom: 40px; }
+    .hero h1 { font-size: 38px !important; line-height: 1.3; }
+    .hero p { font-size: 15px; margin-bottom: 28px; }
+
+    .service-row {
+      flex-direction: column !important;
+      border-radius: 16px;
+    }
+    .service-row .service-media {
+      min-height: 220px;
+    }
+    .service-row .service-copy {
+      padding: 24px;
+    }
+    .service-row .service-copy h3 {
+      font-size: 22px;
+    }
+
+    .reviews-section { padding: 60px 0; }
+    .reviews-row { gap: 24px; }
+    .review-video video {
+      min-height: 250px;
+      border-radius: 16px;
+    }
+    .review-item {
+      padding: 24px 20px 20px;
+      border-radius: 16px;
+    }
+    .review-item::before {
+      font-size: 48px;
+      top: 10px;
+      left: 16px;
+    }
+    .review-viewport {
+      min-height: auto;
+    }
+
+    .vehicles-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      padding: 0 12px;
+    }
+    .vehicle-item {
+      padding: 24px 12px 18px;
+      border-radius: 16px;
+    }
+    .vehicle-icon img {
+      width: 100px;
+      height: 100px;
+    }
+    .vehicle-item span {
+      font-size: 13px;
+    }
+
+    .packages { padding: 60px 0; }
+    .pkg-filters { margin-bottom: 32px; gap: 6px; }
+    .pkg-filter-btn { padding: 8px 18px; font-size: 13px; }
+    .package-card { padding: 24px 20px 20px; border-radius: 16px; }
+
+    .faq-question { padding: 14px 16px; font-size: 14px; }
+    footer { padding: 48px 0 24px; }
+    .footer-grid { gap: 28px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 32px !important; }
+    .hero-buttons { flex-direction: column; width: 100%; align-items: stretch; }
+    .hero-buttons .btn { width: 100%; justify-content: center; }
+    .marquee-item img { height: 140px; }
+    .vehicle-icon img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  /* Loading skeleton */
+  .skeleton {
+    background: linear-gradient(90deg, #e6e8ed 25%, #f0f2f5 50%, #e6e8ed 75%);
+    background-size: 200% 100%;
+    animation: skeleton 1.5s infinite;
+    border-radius: 8px;
+  }
+  @keyframes skeleton {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Admin Link -->
+<a href="/admin" class="admin-link">&#9881; Edit Site</a>
+
+<!-- ============== NAVBAR ============== -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="logo"><img src="logo.png" alt="Detail Peak Auto Spa" class="site-logo"></a>
+
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#vehicles">Vehicles</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <a href="#quote" class="btn btn-primary nav-cta">Get Free Quote</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#vehicles">Vehicles</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <a href="#quote" class="btn btn-primary" style="width:fit-content;">Get Free Quote</a>
+  </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+<section class="hero" id="home" style="padding:0;">
+  <div class="hero-bg">
+    <video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="auto" poster="">
+      <source src="https://res.cloudinary.com/dt4nfkb5u/video/upload/v1781741034/hero-video_ahf2d2.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span>5.0 Rating on Google</span>
+    </div>
+    <h1 id="hero-heading">Premium Mobile<br>Auto Detailing</h1>
+    <p id="hero-subheading">We come to you. Professional detailing services at your home or office in Denver and surrounding areas.</p>
+    <div class="hero-buttons">
+      <a href="#quote" class="btn btn-primary" id="hero-btn-primary">Get Free Quote &rarr;</a>
+      <a href="tel:7205550123" class="btn btn-ghost" id="hero-phone"> Call Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SERVICES ============== -->
+<section id="services">
+  <div class="container">
+    <div class="services-grid">
+      <div class="section-head">
+        <h2>What We Offer</h2>
+        <p class="subtle">Mobile detailing, ceramic coatings, paint correction, interior cleaning and more.</p>
+      </div>
+      <div id="services-container"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== REVIEWS ============== -->
+<section id="ride-reviews" class="reviews-section">
+  <div class="section-head container">
+    <h2>What Our Clients Say</h2>
+    <p class="subtle">Real feedback from our customers.</p>
+  </div>
+  <div class="container reviews-row">
+    <div class="review-video">
+      <video id="reviewVideo" autoplay muted loop playsinline preload="auto">
+        <source src="https://res.cloudinary.com/dt4nfkb5u/video/upload/v1781741020/review-video-of-car-detailing_txdrr9.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="reviews-list">
+      <h2>Reviews</h2>
+      <div class="review-viewport">
+        <div class="review-track" id="review-track"></div>
+      </div>
+      <div class="review-dots" id="reviewDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== VEHICLES ============== -->
+<section id="vehicles" class="vehicles-section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Vehicles We Service</h2>
+    </div>
+    <p class="vehicles-note">We detail it all.</p>
+    <div class="vehicles-grid" id="vehiclesGrid"></div>
+  </div>
+</section>
+
+<!-- ============== PACKAGES ============== -->
+<section id="packages" class="packages">
+  <div class="section-head container">
+    <h2>Choose Your Detail Package</h2>
+    <p>Professional-grade packages tailored to your vehicle's needs.</p>
+  </div>
+
+  <div class="container">
+    <div class="pkg-filters" id="pkgFilters">
+      <button class="pkg-filter-btn active" data-filter="all">All Packages</button>
+      <button class="pkg-filter-btn" data-filter="detailing">Detailing</button>
+      <button class="pkg-filter-btn" data-filter="ceramic">Ceramic Coating</button>
+    </div>
+  </div>
+
+  <div class="grid container" id="pkgGrid"></div>
+</section>
+
+<!-- ============== SHOW YOUR CAR SOME LOVE ============== -->
+<section id="love" class="love-section">
+  <div class="container love-inner">
+    <div class="love-content">
+      <h2>Show your car some love.</h2>
+      <p>Get service at our shop or at home with our mobile detailing service. All our detailers passed background checks, are friendly and reliable. We connect to your water & electricity or bring our own upon request.</p>
+    </div>
+
+    <div class="marquees">
+      <div class="marquee marquee-left">
+        <div class="marquee-track">
+          <div class="marquee-item"><img src="724453831_17914223316410049_4120100861014127128_n.jpg" alt="Detailing"></div>
+          <div class="marquee-item"><img src="671965191_2961463667379937_736832262858011590_n.jpg" alt="Coating"></div>
+          <div class="marquee-item"><img src="655600805_17899362636410049_4306854855917958711_n.jpg" alt="Cars"></div>
+          <div class="marquee-item"><img src="644692511_2922054731320831_4944010010021601650_n.jpg" alt="Detailing"></div>
+          <div class="marquee-item"><img src="644138692_2922054711320833_2528098398589861476_n.jpg" alt="Coating"></div>
+          <div class="marquee-item"><img src="724453831_17914223316410049_4120100861014127128_n.jpg" alt="Detailing"></div>
+          <div class="marquee-item"><img src="671965191_2961463667379937_736832262858011590_n.jpg" alt="Coating"></div>
+          <div class="marquee-item"><img src="655600805_17899362636410049_4306854855917958711_n.jpg" alt="Cars"></div>
+          <div class="marquee-item"><img src="644692511_2922054731320831_4944010010021601650_n.jpg" alt="Detailing"></div>
+          <div class="marquee-item"><img src="644138692_2922054711320833_2528098398589861476_n.jpg" alt="Coating"></div>
+        </div>
+      </div>
+
+      <div class="marquee marquee-right">
+        <div class="marquee-track">
+          <div class="marquee-item"><img src="489369016_17855933775410049_2397862968371663145_n.jpg" alt="SUVs"></div>
+          <div class="marquee-item"><img src="489462540_17855933748410049_3905474229484494642_n.jpg" alt="Trucks"></div>
+          <div class="marquee-item"><img src="491441289_17857435026410049_5192819834415472739_n.jpg" alt="Vans"></div>
+          <div class="marquee-item"><img src="496804287_17859621570410049_2333279440675901622_n.jpg" alt="SUVs"></div>
+          <div class="marquee-item"><img src="503750222_17862921195410049_9220447647129428629_n.jpg" alt="Trucks"></div>
+          <div class="marquee-item"><img src="489369016_17855933775410049_2397862968371663145_n.jpg" alt="SUVs"></div>
+          <div class="marquee-item"><img src="489462540_17855933748410049_3905474229484494642_n.jpg" alt="Trucks"></div>
+          <div class="marquee-item"><img src="491441289_17857435026410049_5192819834415472739_n.jpg" alt="Vans"></div>
+          <div class="marquee-item"><img src="496804287_17859621570410049_2333279440675901622_n.jpg" alt="SUVs"></div>
+          <div class="marquee-item"><img src="503750222_17862921195410049_9220447647129428629_n.jpg" alt="Trucks"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FAQ ============== -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>Location</h3>
+        <p id="footer-location">Serving Denver, CO<br>and surrounding areas</p>
+        <a href="tel:7205550123" id="footer-phone">720-555-0123</a>
+        <a href="mailto:info@detailpeak.com" id="footer-email">info@detailpeak.com</a>
+      </div>
+      <div>
+        <h3>Site Links</h3>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#vehicles">Vehicles</a>
+        <a href="#faq">FAQ</a>
+        <a href="#quote">Get a Quote</a>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <a href="#">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Gift Cards</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        <img src="logo.png" alt="Detail Peak Auto Spa" class="footer-logo" style="width:72px;height:72px;border-radius:8px;object-fit:contain;" />
+      </div>
+      <p id="copyrightYear">&copy; 2026 Detail Peak Auto Spa. All rights reserved.</p>
+      <div class="site-by" style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:6px;">
+        <a href="https://lustrestudio.uk/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.9); text-decoration:none;">Site By</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   DYNAMIC CONTENT LOADER — fetches from CMS JSON files
+   ============================================================ */
+
+const CMS = {
+  async load(path) {
+    try {
+      const res = await fetch('/content/' + path);
+      if (!res.ok) throw new Error('Failed to load ' + path);
+      return await res.json();
+    } catch (e) {
+      console.warn('CMS load error:', e);
+      return null;
+    }
+  }
+};
+
+// Render Services
+async function renderServices() {
+  const data = await CMS.load('collections/services.json');
+  if (!data || !data.items) return;
+  const container = document.getElementById('services-container');
+  container.innerHTML = '';
+  data.items.forEach((item, i) => {
+    const f = item.fields;
+    const img = f.image ? `<div class="service-media"><img src="${f.image}" alt="${f.title}" /></div>` : '';
+    const row = document.createElement('div');
+    row.className = 'service-row' + (i % 2 === 1 ? ' reverse' : '');
+    row.innerHTML = `
+      ${img}
+      <div class="service-copy">
+        <h3>${f.title}</h3>
+        <p>${f.description}</p>
+        <a href="#quote" class="btn btn-primary">Learn More &rarr;</a>
+      </div>
+    `;
+    container.appendChild(row);
+  });
+}
+
+// Render Testimonials
+async function renderTestimonials() {
+  const data = await CMS.load('collections/testimonials.json');
+  if (!data || !data.items) return;
+  const track = document.getElementById('review-track');
+  const dots = document.getElementById('reviewDots');
+  if (!track) return;
+  track.innerHTML = '';
+  dots.innerHTML = '';
+  data.items.forEach((item, i) => {
+    const f = item.fields;
+    const slide = document.createElement('div');
+    slide.className = 'review-slide';
+    const source = f.sourceUrl ? `<a href="${f.sourceUrl}" target="_blank" rel="noopener">${f.name}</a>` : `<strong>${f.name}</strong>`;
+    const stars = f.rating ? '<span class="review-stars">' + '&#9733;'.repeat(f.rating) + '</span>' : '';
+    const role = f.role ? `<div class="review-meta">${f.role}</div>` : '';
+    slide.innerHTML = `
+      <div class="review-item">
+        ${source}
+        ${stars}
+        ${role}
+        <p>${f.quote}</p>
+      </div>
+    `;
+    track.appendChild(slide);
+
+    const dot = document.createElement('button');
+    dot.className = 'review-dot' + (i === 0 ? ' active' : '');
+    dot.dataset.index = i;
+    dots.appendChild(dot);
+  });
+
+  // Re-init carousel
+  initCarousel();
+}
+
+// Render Vehicles
+async function renderVehicles() {
+  const data = await CMS.load('collections/vehicles.json');
+  if (!data || !data.items) return;
+  const grid = document.getElementById('vehiclesGrid');
+  grid.innerHTML = '';
+  data.items.forEach(item => {
+    const f = item.fields;
+    const div = document.createElement('div');
+    div.className = 'vehicle-item';
+    div.innerHTML = `
+      <div class="vehicle-icon"><img src="${f.image || ''}" alt="${f.name}"></div>
+      <span>${f.name}</span>
+    `;
+    grid.appendChild(div);
+  });
+  // Re-init scroll reveal
+  initVehicleReveal();
+}
+
+// Render Packages
+async function renderPackages() {
+  const data = await CMS.load('collections/packages.json');
+  if (!data || !data.items) return;
+  const grid = document.getElementById('pkgGrid');
+  grid.innerHTML = '';
+  data.items.forEach(item => {
+    const f = item.fields;
+    const features = f.features ? f.features.split('\n').map(fe => `<li>${fe.trim()}</li>`).join('') : '';
+    const price = f.price ? `<div class="price"><span>${f.priceLabel || 'Starting at'}</span> ${f.price}</div>` : '';
+    const featured = f.isFeatured ? ' featured' : '';
+    const badge = f.isFeatured ? '<span class="pkg-featured">Popular</span>' : '';
+    const card = document.createElement('div');
+    card.className = 'package-card' + featured;
+    card.dataset.category = (f.category || 'detailing').toLowerCase().replace(' ', '-');
+    card.innerHTML = `
+      ${badge}
+      <span class="pkg-category">${f.category || 'Detailing'}</span>
+      <h4>${f.title}</h4>
+      <div class="muted">${f.description}</div>
+      <ul class="package-list">${features}</ul>
+      <div class="package-cta">
+        <a class="btn btn-primary" href="#quote">Select Package</a>
+        ${price}
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+  // Re-init filters
+  initPackageFilters();
+}
+
+// Render FAQs
+async function renderFAQs() {
+  const data = await CMS.load('collections/faqs.json');
+  if (!data || !data.items) return;
+  const list = document.getElementById('faqList');
+  list.innerHTML = '';
+  data.items.forEach(item => {
+    const f = item.fields;
+    const div = document.createElement('div');
+    div.className = 'faq-item';
+    div.innerHTML = `
+      <button class="faq-question">
+        ${f.question}
+        <span class="faq-icon">&#43;</span>
+      </button>
+      <div class="faq-answer">${f.answer}</div>
+    `;
+    list.appendChild(div);
+  });
+  // Re-init accordion
+  initFAQ();
+}
+
+// Render Settings (business info, SEO)
+async function renderSettings() {
+  const business = await CMS.load('settings/business.json');
+  if (business) {
+    if (business.phone) {
+      const phoneLink = document.getElementById('hero-phone');
+      if (phoneLink) { phoneLink.href = 'tel:' + business.phone.replace(/-/g, ''); phoneLink.textContent = ' Call ' + business.phone; }
+      const footerPhone = document.getElementById('footer-phone');
+      if (footerPhone) { footerPhone.href = 'tel:' + business.phone.replace(/-/g, ''); footerPhone.textContent = business.phone; }
+    }
+    if (business.email) {
+      const footerEmail = document.getElementById('footer-email');
+      if (footerEmail) { footerEmail.href = 'mailto:' + business.email; footerEmail.textContent = business.email; }
+    }
+    if (business.address) {
+      const footerLoc = document.getElementById('footer-location');
+      if (footerLoc) footerLoc.innerHTML = business.address.replace(/\n/g, '<br>');
+    }
+  }
+  const seo = await CMS.load('settings/seo.json');
+  if (seo) {
+    if (seo.defaultTitle) {
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = seo.defaultTitle;
+    }
+    if (seo.defaultDescription) {
+      const descEl = document.getElementById('page-desc');
+      if (descEl) descEl.content = seo.defaultDescription;
+    }
+  }
+}
+
+// Carousel
+function initCarousel() {
+  const track = document.querySelector('.review-track');
+  if (!track) return;
+  const slides = Array.from(track.children);
+  const dots = Array.from(document.querySelectorAll('.review-dot'));
+  let index = 0;
+  const total = slides.length;
+  if (total === 0) return;
+
+  function updateDots() {
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+  }
+  function go(i) {
+    index = i;
+    track.style.transform = 'translateX(' + (-i * 100) + '%)';
+    updateDots();
+  }
+  dots.forEach(dot => {
+    dot.addEventListener('click', function() {
+      clearInterval(timer);
+      go(parseInt(dot.dataset.index));
+      timer = setInterval(advance, intervalMs);
+    });
+  });
+  const intervalMs = 5000;
+  function advance() { go((index + 1) % total); }
+  let timer = setInterval(advance, intervalMs);
+  const viewport = document.querySelector('.review-viewport');
+  if (viewport) {
+    viewport.addEventListener('mouseenter', () => clearInterval(timer));
+    viewport.addEventListener('mouseleave', () => { timer = setInterval(advance, intervalMs); });
+  }
+}
+
+// Vehicle reveal
+function initVehicleReveal() {
+  const items = document.querySelectorAll('.vehicle-item');
+  if (!items.length) return;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  items.forEach(item => observer.observe(item));
+}
+
+// Package filters
+function initPackageFilters() {
+  const btns = document.querySelectorAll('.pkg-filter-btn');
+  const cards = document.querySelectorAll('.package-card');
+  btns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+}
+
+// FAQ accordion
+function initFAQ() {
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', function() {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+}
+
+// Navbar scroll
+var navbar = document.getElementById('navbar');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 50) navbar.classList.add('scrolled');
+  else navbar.classList.remove('scrolled');
+});
+
+// Mobile menu
+var navToggle = document.getElementById('navToggle');
+var mobileMenu = document.getElementById('mobileMenu');
+navToggle.addEventListener('click', function() {
+  mobileMenu.style.display = (mobileMenu.style.display === 'flex') ? 'none' : 'flex';
+});
+mobileMenu.querySelectorAll('a').forEach(function(link) {
+  link.addEventListener('click', function() { mobileMenu.style.display = 'none'; });
+});
+
+// Video autoplay
+function forcePlayVideo(video) {
+  if (!video) return;
+  video.muted = true;
+  video.defaultMuted = true;
+  video.playsInline = true;
+  video.setAttribute('playsinline', '');
+  video.setAttribute('muted', '');
+  video.load();
+  var playPromise = video.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(function(error) {
+      var playOnInteraction = function() { video.play(); document.removeEventListener('click', playOnInteraction); document.removeEventListener('touchstart', playOnInteraction); };
+      document.addEventListener('click', playOnInteraction);
+      document.addEventListener('touchstart', playOnInteraction);
+    });
+  }
+}
+window.addEventListener('load', function() {
+  forcePlayVideo(document.getElementById('heroVideo'));
+  forcePlayVideo(document.getElementById('reviewVideo'));
+});
+
+// Year
+var cy = document.getElementById('copyrightYear');
+if (cy) cy.innerHTML = '&copy; ' + new Date().getFullYear() + ' Detail Peak Auto Spa. All rights reserved.';
+
+// Load all CMS content
+async function loadAllContent() {
+  await Promise.all([
+    renderSettings(),
+    renderServices(),
+    renderTestimonials(),
+    renderVehicles(),
+    renderPackages(),
+    renderFAQs()
+  ]);
+}
+
+loadAllContent();
+</script>
+
+</body>
+</html>

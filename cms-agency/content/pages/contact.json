@@ -1,0 +1,29 @@
+{
+  "slug": "contact",
+  "title": "Contact Us",
+  "meta": {
+    "title": "Contact Us | Detail Peak Auto Spa",
+    "description": "Get in touch with Detail Peak Auto Spa. Schedule your mobile detailing appointment in Denver today.",
+    "canonical": "/contact",
+    "og": {
+      "title": "Contact Detail Peak Auto Spa",
+      "description": "Schedule your mobile detailing appointment today.",
+      "image": ""
+    },
+    "schema": ""
+  },
+  "sections": [
+    {
+      "id": "sec-contact-001",
+      "type": "contact",
+      "fields": {
+        "heading": "Contact Us",
+        "subheading": "Ready to give your car the care it deserves? Reach out to schedule your mobile detailing appointment or ask any questions.",
+        "showMap": true,
+        "mapEmbedUrl": "",
+        "formHeading": "Request a Quote",
+        "formSuccessMessage": "Thank you! We will get back to you within 24 hours."
+      }
+    }
+  ]
+}

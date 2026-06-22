@@ -1,0 +1,56 @@
+{
+  "slug": "home",
+  "title": "Home",
+  "meta": {
+    "title": "Detail Peak Auto Spa | Premium Mobile Detailing Denver",
+    "description": "Premium mobile auto detailing serving Denver and surrounding areas. Professional interior and exterior detailing, ceramic coating, and paint protection at your home or office.",
+    "canonical": "/",
+    "og": {
+      "title": "Detail Peak Auto Spa - Premium Mobile Detailing",
+      "description": "Premium mobile auto detailing serving Denver and surrounding areas.",
+      "image": "/uploads/hero.jpg"
+    },
+    "schema": ""
+  },
+  "sections": [
+    {
+      "id": "sec-hero-001",
+      "type": "hero",
+      "fields": {
+        "heading": "Premium Mobile Auto Detailing",
+        "subheading": "We come to you. Professional detailing services at your home or office in Denver and surrounding areas.",
+        "buttonText": "Get Free Quote",
+        "buttonLink": "#quote",
+        "image": "hero-video.mp4"
+      }
+    },
+    {
+      "id": "sec-services-001",
+      "type": "services",
+      "fields": {
+        "heading": "What We Offer",
+        "showIcons": true,
+        "selectedServices": ["svc-1", "svc-2", "svc-3", "svc-4"]
+      }
+    },
+    {
+      "id": "sec-testimonials-001",
+      "type": "testimonials",
+      "fields": {
+        "heading": "What Our Clients Say",
+        "testimonialIds": ["tst-1", "tst-2", "tst-3", "tst-4"]
+      }
+    },
+    {
+      "id": "sec-cta-001",
+      "type": "cta",
+      "fields": {
+        "heading": "Ready to Give Your Car the Care It Deserves?",
+        "subheading": "Schedule your mobile detailing appointment today and experience the Detail Peak difference.",
+        "buttonText": "Get Free Quote",
+        "buttonLink": "#quote",
+        "backgroundImage": ""
+      }
+    }
+  ]
+}

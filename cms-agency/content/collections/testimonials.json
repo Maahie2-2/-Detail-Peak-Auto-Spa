@@ -1,0 +1,57 @@
+{
+  "name": "testimonials",
+  "items": [
+    {
+      "id": "tst-1",
+      "createdAt": "2024-01-15T10:00:00Z",
+      "updatedAt": "2024-01-15T10:00:00Z",
+      "fields": {
+        "name": "Dorian Villatoro",
+        "role": "Google Review",
+        "quote": "Jonah provided excellent, professional service while detailing my car. He was very flexible with scheduling and went above and beyond to make sure we had a clean car before our baby was born. His attention to detail and commitment to customer satisfaction were outstanding.",
+        "image": "",
+        "rating": 5,
+        "sourceUrl": "https://www.google.com/maps/contrib/114647068733110309123/reviews?hl=en-GB"
+      }
+    },
+    {
+      "id": "tst-2",
+      "createdAt": "2024-02-20T14:30:00Z",
+      "updatedAt": "2024-02-20T14:30:00Z",
+      "fields": {
+        "name": "Bimael Meza",
+        "role": "Google Review",
+        "quote": "Best decision was going to Detail Peak Auto Spa. Got my truck looking amazing. The interaction was great, he was amazing taking his time to get everything done right. Highly recommended — if I could I'd give him 10 stars.",
+        "image": "",
+        "rating": 5,
+        "sourceUrl": "https://www.google.com/maps/contrib/105047898369669047541/reviews?hl=en-GB"
+      }
+    },
+    {
+      "id": "tst-3",
+      "createdAt": "2024-03-10T09:15:00Z",
+      "updatedAt": "2024-03-10T09:15:00Z",
+      "fields": {
+        "name": "Rose Trasvina",
+        "role": "Google Review",
+        "quote": "By far the best detailing experience I've had. Jonah was very professional and communicated great through the whole process. My Tesla has never looked better! Highly recommend — he comes straight to you.",
+        "image": "",
+        "rating": 5,
+        "sourceUrl": "https://www.google.com/maps/contrib/109147734034672688911/reviews?hl=en-GB"
+      }
+    },
+    {
+      "id": "tst-4",
+      "createdAt": "2024-04-05T11:00:00Z",
+      "updatedAt": "2024-04-05T11:00:00Z",
+      "fields": {
+        "name": "Aaron Batilo",
+        "role": "Google Review",
+        "quote": "The car looks absolutely stunning. The attention to detail is great, I'm very happy with the service. He brings all of his own equipment including water, and he'll come right to you. Extremely convenient, high quality, and the prices feel very fair.",
+        "image": "",
+        "rating": 5,
+        "sourceUrl": "https://www.google.com/maps/contrib/100241579228940124007/reviews?hl=en-GB"
+      }
+    }
+  ]
+}

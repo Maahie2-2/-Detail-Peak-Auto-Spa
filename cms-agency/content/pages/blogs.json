@@ -1,0 +1,29 @@
+{
+  "slug": "blogs",
+  "title": "Blogs",
+  "meta": {
+    "title": "",
+    "description": "",
+    "canonical": "",
+    "og": {
+      "title": "",
+      "description": "",
+      "image": ""
+    },
+    "schema": ""
+  },
+  "sections": [
+    {
+      "id": "sec-jrqjnhy",
+      "type": "hero",
+      "fields": {
+        "heading": "Why you need detailing'",
+        "subheading": "1234567890",
+        "buttonText": "Start",
+        "buttonLink": "",
+        "image": ""
+      }
+    }
+  ],
+  "updatedAt": "2026-06-21T20:03:15.496Z"
+}

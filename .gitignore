@@ -1,0 +1,8 @@
+
+# ignore nested node_modules
+cms-agency/node_modules/
+cms-agency/**/node_modules/
+
+# ignore nested node_modules
+cms-agency/node_modules/
+cms-agency/**/node_modules/
