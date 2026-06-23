@@ -11,6 +11,11 @@ const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 
+// Trust proxy in production (Render sits behind a proxy)
+if (config.nodeEnv === 'production') {
+  app.set('trust proxy', 1);
+}
+
 // Middleware
 app.use(express.json({ limit: '10mb' }));
 app.use(cors({
@@ -23,6 +28,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   name: 'cms.sid',
+  proxy: config.nodeEnv === 'production',
   cookie: {
     httpOnly: true,
     secure: config.nodeEnv === 'production',
@@ -36,6 +42,9 @@ const loginLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 5,
   message: { success: false, message: 'Too many login attempts. Try again later.', code: 'RATE_LIMITED' },
+  standardHeaders: true,
+  legacyHeaders: false,
+  skip: (req) => req.ip === '127.0.0.1', // skip for localhost
 });
 app.use('/api/auth/login', loginLimiter);
 

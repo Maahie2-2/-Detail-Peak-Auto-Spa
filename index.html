@@ -763,25 +763,6 @@
   .footer-brand{ display:flex; align-items:center; gap:10px; }
 
   /* Admin link */
-  .admin-link{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--color-primary);
-    color: #fff;
-    padding: 10px 16px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 600;
-    z-index: 100;
-    box-shadow: 0 4px 14px rgba(58,95,217,0.3);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .admin-link:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(58,95,217,0.4);
-  }
-
   /* ---------- MOBILE & RESPONSIVE REFINEMENTS ---------- */
   @media (max-width: 859px) {
     section { padding: 60px 0; }
@@ -895,9 +876,7 @@
 <body>
 
 <!-- Admin Link -->
-<a href="/admin" class="admin-link">&#9881; Edit Site</a>
 
-<!-- ============== NAVBAR ============== -->
 <nav class="navbar" id="navbar">
   <div class="container nav-inner">
     <a href="#home" class="logo"><img src="logo.png" alt="Detail Peak Auto Spa" class="site-logo"></a>
